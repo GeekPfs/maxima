@@ -103,9 +103,106 @@
 
 
 /**
+ * Home page
+ */
+
+.email-obfuscated {
+  text-align: center;
+}
+
+.profile {
+
+  $profile-image-width: 220px;
+  
+  .col-wrapper {
+    @extend %clearfix;
+  }
+
+  .col1 {
+    float:left;
+    width: 250px;
+  }
+
+  .col2 {
+    float: left;
+    width: -webkit-calc(100% - #{$spacing-unit} - #{$profile-image-width});
+    width:         calc(100% - #{$spacing-unit} - #{$profile-image-width});
+    margin-left: #{$spacing-unit};
+  }
+
+  @media only screen and (max-width:600px) {
+      .col1, .col2 {
+        float: none;
+        width: 100%;
+        margin-top: #{$spacing-unit};
+      }
+  }
+
+  .profile-image {
+    width: #{$profile-image-width};
+    height: #{$profile-image-width};
+    background-size: 100%;
+  }
+
+  .profile-description {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: -0.5rem;
+      text-align: center;
+    }
+  }
+
+}
+
+
+/**
+ * Post formatting
+ */
+.post-date {
+  position: absolute;
+  margin-left: -60px;
+
+  text-transform: uppercase;
+  text-align: center;
+  color: $grey-color;
+  font-family: Open Sans, Arial, sans-serif;
+
+  .post-date-day {
+    font-size: 1.5rem;
+    margin-bottom: -0.4rem;
+  }
+
+  .post-date-month {
+    font-size: 0.8rem;
+    margin-bottom: -0.1rem;
+  }
+
+  .post-date-year {
+    font-size: 0.8rem;
+  }
+}
+
+.post-list {
+  li {
+    .post-seperator {
+      margin-top: 30px;
+    }
+  }
+
+  li:last-child {
+    .post-seperator {
+      display: none;
+    }
+  }
+}
+
+
+/**
  * Site footer
  */
 .site-footer {
+  background-color: $footer-background-color;
+  color: $footer-color;
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
 }
@@ -119,6 +216,46 @@
 .social-media-list {
   list-style: none;
   margin-left: 0;
+}
+
+/**
+ * Icons
+ */
+.icon > svg {
+  display: inline-block;
+  vertical-align: middle;
+
+  path {
+    fill: $footer-color;
+  }
+}
+
+.social-media-list {
+  text-align: center;
+
+  .icon {
+    padding: 15px;
+  }
+
+  /**
+   * Twitter icon gets slightly less padding
+   */
+  .icon--twitter {
+    padding-right: 8px;
+  }
+
+  li {
+    display: inline-block;
+    *display: inline;
+
+    svg {
+      transform: scale(2);
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
 }
 
 .footer-col-wrapper {

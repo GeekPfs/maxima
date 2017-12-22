@@ -1,0 +1,5 @@
+<time datetime="{{ include.the_date | date_to_xmlschema }}" itemprop="datePublished" class="post-date post-meta">
+	<div class="post-date-day">{{ include.the_date | date: "%d" }}</div>
+	<div class="post-date-month">{{ include.the_date | date: "%b" }}</div>
+	<div class="post-date-year">{{ include.the_date | date: "%Y" }}</div>
+</time>
