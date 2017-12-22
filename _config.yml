@@ -11,7 +11,7 @@ github_username:  jekyll
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-minima:
+maxima:
   date_format: "%b %-d, %Y"
 
 # If you want to link only specific pages in your header, uncomment
@@ -21,7 +21,7 @@ minima:
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: maxima
 exclude:
   - Gemfile
   - Gemfile.lock
