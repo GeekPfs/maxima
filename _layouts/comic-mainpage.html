@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<div class="comic-latest">
+
+  {% assign latest_comic = site.comics.last %}
+  {% include comic-content.html comic=latest_comic %}
+
+</div>

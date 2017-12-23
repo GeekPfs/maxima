@@ -1,0 +1,66 @@
+<article class="comic" itemtype="http://schema.org/CreativeWork">
+
+  <header class="comic-header">
+    <h1 class="post-title" itemprop="name headline">
+      <a href="{{ include.comic.url }}">
+        {{ include.comic.title | escape | markdownify }}
+      </a>
+    </h1>
+    <div class="comic-meta">
+      <p>
+        <span class="comic-link-first">
+          {% if include.comic.previous.url %}
+            <a href="{{ site.comics.first.url }}">first</a>
+          {% else %}
+            first
+          {% endif %}
+           • 
+        </span>
+        <span class="comic-link-previous">
+          {% if include.comic.previous.url %}
+            <a href="{{include.comic.previous.url}}">previous</a>
+          {% else %}
+            previous
+          {% endif %}
+           • 
+        </span>
+        <span class="comic-link-random">
+          <a href="/comics/random?from={{ page.url | uri_escape }}">random</a>
+        </span>
+        <!--
+        <span class="comic-number">
+          #{{ include.comic.comic_number | format:"%03d" }}
+        </span>
+        -->
+        <span class="comic-link-next">
+           • 
+          {% if include.comic.next.url %}
+            <a href="{{include.comic.next.url}}">next</a>
+          {% else %}
+            next
+          {% endif %}
+        </span>
+        <span class="comic-link-latest">
+           • 
+          {% if include.comic.next.url %}
+            <a href="/comics">latest</a>
+          {% else %}
+            latest
+          {% endif %}
+        </span>
+      </p>
+    </div>
+  </header>
+
+  <div class="comic-image" style="background-image:url('{{ include.comic.comic_file }}');">
+    <img src="{{ include.comic.comic_file }}" />
+  </div>
+
+  <div class="comic-content">
+    {{ include.comic.content }}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus-comments.html %}
+  {% endif %}
+</article>

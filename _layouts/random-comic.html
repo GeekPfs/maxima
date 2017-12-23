@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+  <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
+  <script type="text/javascript">
+    var comic_urls=[];
+    {% for comic in site.comics %}comic_urls.push("{{ comic.url }}");
+    {% endfor %}
+    // See if a from-url was passed. If so, don't include it in the list of possible links
+    var url = new URL(window.location);
+    var from_url = url.searchParams.get("from");
+    var index = comic_urls.indexOf(from_url);
+    if(from_url == "/comics/") index = comic_urls.length-1;
+    if (index > -1) comic_urls.splice(index, 1);
+    
+    var url = comic_urls[Math.floor(Math.random() * comic_urls.length)];
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', url);
+    document.head.appendChild(link);
+    
+    if (typeof IE_fix != "undefined") {
+      document.write("redirecting");
+      var referLink = document.createElement("a");
+      referLink.href = url;
+      document.body.appendChild(referLink);
+      referLink.click();
+    } else {
+      window.location.replace(url);
+    }
+  </script>
+
+  <noscript>
+    <p>JavaScript is required to find a random comic</p>
+    <p>Please enable JavaScript, then refresh this page.</p>
+  </noscript>
+
+  </body>
+
+</html>
