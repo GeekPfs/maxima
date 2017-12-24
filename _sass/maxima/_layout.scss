@@ -108,6 +108,7 @@
 
 .email-obfuscated {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .profile {
@@ -142,6 +143,7 @@
       font-size: 2.5rem;
       margin-bottom: -0.5rem;
       text-align: center;
+      line-height: 2.5rem;
     }
   }
 
@@ -149,6 +151,7 @@
       .col1, .col2 {
         float: none;
         width: 100%;
+        margin: 0px;
         margin-top: #{$spacing-unit};
       }
       .profile-image {
@@ -267,6 +270,14 @@
   }
 }
 
+@media only screen and (max-width: 950px) {
+  .post-date {
+    float: right;
+    position: relative;
+    margin-left: 0px;
+  }
+}
+
 .post-list {
   li {
     .post-seperator {
@@ -309,6 +320,15 @@
     width: 100%;
   }
 }
+
+
+@media only screen and (max-width: 1150px) {
+  .comic-image {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+
 
 .comic-content {
   p:last-child:after {
