@@ -8,7 +8,7 @@ layout: default
     <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <span class="post-wordcount">{{ page.content | number_of_words | divided_by:10 | times:10 }} words</span>
-      <span class="post-readtime"> • {{ page.content | number_of_words | times:0.4 | divided_by:60 | floor | plus:1 }} minutes</span>
+      <span class="post-readtime"> • {{ page.content | number_of_words | times:0.4 | divided_by:60 | floor | plus:2 }} minutes</span>
       {% if page.author %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"> • {{ page.author }}</span></span>
       {% endif %}

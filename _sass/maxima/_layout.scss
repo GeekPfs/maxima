@@ -296,8 +296,16 @@
 /**
  * Comic-specific post formatting
  */
+@font-face{ 
+  font-family: 'KomikaTitle';
+  src: url('/assets/fonts/komtit-webfont.ttf');
+  src: url('/assets/fonts/komtit-webfont.woff') format('woff');
+  src: url('/assets/fonts/komtit-webfont.woff2') format('woff2');
+}
+
 .comic-header {
   text-align: center;
+  font-family: 'KomikaTitle', Arial, sans-serif;
 
   h1 {
     margin-bottom: -0.5rem;
