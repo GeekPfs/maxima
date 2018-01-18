@@ -52,7 +52,7 @@
     </div>
   </header>
 
-  <div class="comic-image" style="background-image:url('{{ include.comic.comic_file }}');">
+  <div class="comic-image {% if include.comic.comic_display_wide %}comic-display-wide{% endif %}" style="background-image:url('{{ include.comic.comic_file }}');">
     <img src="{{ include.comic.comic_file }}" />
   </div>
 

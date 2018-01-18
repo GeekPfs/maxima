@@ -318,10 +318,13 @@
 
 .comic-image {
   background-size: 100%;
-  width: 150%;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-left: -25%;
+
+  &.comic-display-wide {
+    margin-left: -25%;
+    width: 150%;
+  }
 
   img {
     visibility: hidden;
@@ -332,8 +335,10 @@
 
 @media only screen and (max-width: 1150px) {
   .comic-image {
-    width: 100%;
-    margin-left: 0%;
+    &.comic-display-wide {
+      width: 100%;
+      margin-left: 0%;
+    }
   }
 }
 
