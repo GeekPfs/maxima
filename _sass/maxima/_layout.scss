@@ -106,16 +106,17 @@
  * Home page
  */
 
-.email-obfuscated {
-  text-align: center;
-  margin-top: 1rem;
+.home {
+  > div {
+    margin-bottom: 1rem;
+  }
 }
 
 .profile {
 
   $profile-image-width: 220px;
   
-  .col-wrapper {
+  &.col-wrapper {
     @extend %clearfix;
   }
 
@@ -145,6 +146,11 @@
       text-align: center;
       line-height: 2.5rem;
     }
+    
+    .email-obfuscated {
+      text-align: center;
+      margin-top: 1rem;
+    }
   }
 
   @include media-query($on-palm) {
@@ -159,6 +165,15 @@
         background-size: $profile-image-width;
         background-position: center center;
       }
+  }
+
+}
+
+
+.presentations {
+  
+  &.col-wrapper {
+    @extend %clearfix;
   }
 
 }
