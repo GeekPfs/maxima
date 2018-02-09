@@ -9,7 +9,7 @@ layout: default
       <li>
         {% include drop-date.html the_date=post.date %}
         <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <a class="post-link" href="{{ post.url | relative_url }}">{% if post.published == false %}<span style="font-size:90%">📄</span>{% endif %} {{ post.title | escape }}</a>
         </h2>
         <div class="post-excerpt" />
           {{ post.excerpt }}
