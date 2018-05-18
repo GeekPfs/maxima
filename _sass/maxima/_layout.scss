@@ -179,6 +179,39 @@
 
 }
 
+.publications {
+  
+  ul {
+    list-style-type: none;
+
+    li {
+
+      img {
+        float: left;
+        max-width: 20%;
+        height: auto;
+        min-height: 50px;
+        margin-right: 10px;
+      }
+
+      p {
+
+        &:first-child {
+          font-style: italic;
+          text-decoration: underline;
+        }
+
+        margin-bottom: 0px;
+      }
+
+      margin-bottom: 10px;
+
+      @extend %clearfix;
+    }
+  }
+
+}
+
 
 /**
  * Page content
